@@ -58,8 +58,4 @@ class Symbol_Table:
 
 # print("Search:", table.search("city", "Delhi"))
 
-<<<<<<< HEAD
 # table.display()
-=======
-# table.display()
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9

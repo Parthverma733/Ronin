@@ -1,6 +1,7 @@
 from .symbol_table import Symbol_Table
 from .token import Token
 from .token_types import TokenType
+from .lexer_rules import KEYWORDS
 
 class Lexer:
     def __init__(self, code):
@@ -33,13 +34,7 @@ class Lexer:
         return 0
     
     def getType(self, lexeme):
-        keywords = {
-            "if": TokenType.IF,
-            "else": TokenType.ELSE,
-            "while": TokenType.WHILE,
-            "let": TokenType.LET
-
-        }
+        keywords = KEYWORDS
         if lexeme in keywords:
             return "keyword"
         else:

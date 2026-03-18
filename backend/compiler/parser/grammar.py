@@ -8,21 +8,15 @@ class Grammer:
         
     #function to check expected token 
     def match(self, expected):
-<<<<<<< HEAD
         print(self.currentToken)
-=======
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9
 
         # if keyword we need check value of keyword
         if self.currentToken.type == "keyword" and self.currentToken.value == expected: 
             self.currentToken = self.lexer.next_token()
 
-<<<<<<< HEAD
         elif self.currentToken.type == "symbol" and self.currentToken.value == expected: 
             self.currentToken = self.lexer.next_token()
 
-=======
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9
         # else check the type like identifer ,number,etc
         elif self.currentToken.type == expected:
             self.currentToken = self.lexer.next_token()
@@ -47,7 +41,6 @@ class Grammer:
         self.match("assig")
         self.expression()
 
-<<<<<<< HEAD
     def body(self):
         while self.currentToken.value != "}" and self.currentToken.type != "EOF":
             self.stmt()
@@ -73,19 +66,14 @@ class Grammer:
         self.match("}")
 
 
-=======
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9
     #function to check valid statment start like : let, for, while, if
     def stmt(self):
         if self.currentToken.value == "let":
             self.var_decl()
-<<<<<<< HEAD
         elif self.currentToken.value == "if":
             self.if_condition()
         elif self.currentToken.value == "while":
             self.while_loop()
-=======
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9
         else:
             print("Unknown statement at line:",self.currentToken.line)
             self.currentToken = self.lexer.next_token()
@@ -101,19 +89,8 @@ class Grammer:
 
 
 
-<<<<<<< HEAD
 code = """if 10 > 5 { let a = 10"""
 
 if __name__ == "__main__":
     grammer = Grammer(code)
     grammer.start()  
-=======
-code = """
-let x = 10
-let 10 = 10
-"""
-
-if __name__ == "__main__":
-    grammer = Grammer(code)
-    grammer.start()
->>>>>>> 83fa50633b4be73171d02e3cc1e9293bef9437a9
